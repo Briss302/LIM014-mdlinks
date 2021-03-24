@@ -1,4 +1,22 @@
 {
   "name": "md-links",
-  "version": "0.1.0"
+  "version": "0.1.0",
+  "description": "Desarrollo de una API para validar el estado de links en archivos markdown",
+  "main": "index.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Briss302/LIM014-mdlinks.git"
+  },
+  "author": "Briceyda Diaz Quispe",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/Briss302/LIM014-mdlinks/issues"
+  },
+  "homepage": "https://github.com/Briss302/LIM014-mdlinks#readme"
 }
