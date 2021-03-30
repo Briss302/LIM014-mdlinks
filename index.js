@@ -14,7 +14,7 @@ const pathResolve = (route) => path.resolve(route);
 // Vereficar si es un archivo, retorna un valor booleano
 const file = (route) => fs.lstatSync(route).isFile();
 // Verificar si es un archivo .md
-const fileMd = (route) => path.extname(route) == ".md";
+const fileMd = (route) => path.extname(route) === ".md";
 // Leer contenido de un archivo
 const readFile = (route) => {
   const read = fs.readFileSync(route, { encoding: "utf8", flag: "r" });
