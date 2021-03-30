@@ -6,11 +6,9 @@
     "node": true,
     "jest": true
   },
-  "extends": ["airbnb-base"],
-  "parserOptions": {
-    "ecmaVersion": 12
-  },
+  "extends": ["airbnb", "prettier", "prettier/react"],
   "rules": {
     "no-console": "warn"
-  }
+  },
+  "plugins": ["prettier"]
 }
