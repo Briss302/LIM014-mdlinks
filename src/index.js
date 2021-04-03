@@ -29,29 +29,7 @@ const getLinks = (textFile) => {
   const links = content.match(patron);
   return links
 }
-// HACER UNA FUNCIÓN Q OBTENGA UN ARRAY DE OBJETOS EL TEXT DEL LIK, LINK, FILE
-// Petición HTTP
-const linksStatus = (route) => {
-  const getLinksArray = getLinks(route);
-  axios({
-    method: 'HEAD',
-    url: 'https://es.wikipedia.org/wiki/Markdown'
-  }).then(res => {
-    console.log(res.status)
-  }).catch(err => { console.log(err) });
-};
-linksStatus();
-// AXIOS DE MANERA AUTOMATICA CREA UNA PROEMSA
 
-// Verificar si es un directorio, retorna un valor booleano
-const directory = (route) => fs.lstatSync(route).isDirectory();
-// Acceder a directorio 
-const AccessDirectory = (route) => {
-  // Leer contenido de un directorio, retorna un array con los nombres de archivos
-  const arrayFiles = fs.readdirSync(route);
-  const getFileMd = arrayFiles.filter((file) => fileMd(file));
-  return getFileMd;
-}
 //console.log(AccessDirectory(dir));
 
 module.exports = {
