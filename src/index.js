@@ -1,9 +1,11 @@
 // Modulos NODEJS
 const path = require('path');
-const fs = require("fs");
+const fs = require('fs');
+// Axios librería para hacer peticiones HTTP
+const axios = require('axios');
 // Rutas de prueba
-const dir = "pruebas";
-const filePrueba = "pruebas/read.md";
+const dir = 'pruebas';
+const filePrueba = 'pruebas/read.md';
 
 // Validar si exite la ruta
 const pathExists = (route) => fs.existsSync(route);
@@ -27,6 +29,19 @@ const getLinks = (textFile) => {
   const links = content.match(patron);
   return links
 }
+// HACER UNA FUNCIÓN Q OBTENGA UN ARRAY DE OBJETOS EL TEXT DEL LIK, LINK, FILE
+// Petición HTTP
+const linksStatus = (route) => {
+  const getLinksArray = getLinks(route);
+  axios({
+    method: 'HEAD',
+    url: 'https://es.wikipedia.org/wiki/Markdown'
+  }).then(res => {
+    console.log(res.status)
+  }).catch(err => { console.log(err) });
+};
+linksStatus();
+// AXIOS DE MANERA AUTOMATICA CREA UNA PROEMSA
 
 // Verificar si es un directorio, retorna un valor booleano
 const directory = (route) => fs.lstatSync(route).isDirectory();
