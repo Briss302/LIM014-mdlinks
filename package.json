@@ -10,9 +10,9 @@
     "test": "jest --verbose --coverage",
     "lint": "eslint ./",
     "lint:fix": "eslint ./ --fix",
-    "index": "nodemon src/index.js",
-    "md-links": "nodemon src/md-links.js",
-    "prueba": "nodemon prueba.js"
+    "index": "node ./src/index.js",
+    "api": "node src/md-links.js",
+    "start": "node prueba.js"
   },
   "repository": {
     "type": "git",
@@ -20,6 +20,9 @@
   },
   "author": "Briceyda Diaz Quispe",
   "license": "MIT",
+  "bin": {
+    "md-links": "./bin/cli.js"
+  },
   "bugs": {
     "url": "https://github.com/Briss302/LIM014-mdlinks/issues"
   },
@@ -31,6 +34,9 @@
     "jest": "^26.6.3"
   },
   "dependencies": {
-    "axios": "^0.21.1"
+    "axios": "^0.21.1",
+    "chalk": "^4.1.0",
+    "commander": "^7.2.0",
+    "figlet": "^1.5.0"
   }
 }

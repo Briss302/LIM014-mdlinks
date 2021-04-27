@@ -1,15 +1,21 @@
-const { isAbsolute } = require('path');
-const path = require('path');
-const { pathResolve } = require('./index')
-// Aqui me retorna una promesa
-// opcion = {validate: true o false} => trabajar en esta funcion
-// resolve y reject en funcion mdlinks
-const mdLinks = ((route, opcion) => {
+const { validAndResolvePath, getLinksStatus, getElements } = require('./index')
 
-  const normalizePath = path.normalize(route);
-  return pathResolve(normalizePath)
-})
 
+const mdLinks = ((route, option = { validate: false }) => {
+  return new Promise((resolve, reject) => {
+
+    const isvalid = validAndResolvePath(route);
+
+    if (isvalid) {
+      const accessElements = getElements(isvalid);
+      if (option.validate === true) return resolve(getLinksStatus(accessElements))
+      if (option.validate === false) return resolve(accessElements)
+    }
+    if (isvalid === false) return reject("Ruta invalida")
+
+  })
+
+});
 
 
 module.exports = {
