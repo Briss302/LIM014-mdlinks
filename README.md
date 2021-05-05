@@ -31,15 +31,6 @@ propia librería (o biblioteca - library) en JavaScript.
 ```
 npm i https://github.com/Briss302/LIM014-mdlinks.git
 ```
-- Instalación con npm
-```
-npm i md-links
-```
-
-## 3. Consumo de la API
-```
-const mdLinks = require('md-links')
-```
 
 ## 4. JavaScript API
 El módulo se puede importar en otros scripts de Node.js y ofrece la siguiente interfaz:
