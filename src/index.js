@@ -14,7 +14,7 @@ const readFile = (route) => {
   return readContent;
 };
 
-// FUNCIÓN PARA FORMA LAS PROPIEDADES DEL ARRAY DE OBJETO
+// FUNCIÓN PARA FORMAR LAS PROPIEDADES DEL ARRAY DE OBJETO
 const getProperties = (route) => {
   const content = readFile(route);
   let arrayProperty = [];
